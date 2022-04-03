@@ -1,8 +1,10 @@
 /****** INCLUDES  *********/
 #include "TransmitBatteryReport.h"
-#include <stdlib.h>
+#include<stdlib.h>
 #include<float.h>
 #include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
 
 /*******MACROS***********/
 
@@ -22,7 +24,7 @@ void printOnConsole(char *Data)
 
 char* formatOutputData(float chargeRate,float SOC,float Temp)
 {
- FormatedOPData = {'\0'};
+ FormatedOPData = '\0';
  strcat(FormatedOPData,chargeRate);
  return FormatedOPData;
 }
