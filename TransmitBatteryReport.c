@@ -10,11 +10,11 @@
 
 /***** DEFINES***********/
 
-typedef unsigned char bool;
-
 /******VARIABLES***********/
 
 char *FormatedOPData;
+
+FormatedOPData = malloc(sizeof(char));
 
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
