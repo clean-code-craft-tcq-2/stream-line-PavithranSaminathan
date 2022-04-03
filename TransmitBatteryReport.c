@@ -23,7 +23,7 @@ void printOnConsole(char *Data)
 
 char* formatOutputData(float chargeRate,float SOC,float Temp)
 {
-  gcvt(chargeRate,5,FormatedOPData);
+  sprintf(FormatedOPData,"CR:",chargeRate,",SOC",SOC,",Temp:",Temp);
   return FormatedOPData;
 }
 
