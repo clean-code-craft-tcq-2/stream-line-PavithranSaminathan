@@ -23,8 +23,8 @@ void printOnConsole(char *Data)
 
 char* formatOutputData(float chargeRate,float SOC,float Temp)
 {
- strcat(FormatedOPData,(char*)chargeRate);
- return FormatedOPData;
+  gcvt(chargeRate,5,FormatedOPData);
+  return FormatedOPData;
 }
 
 float ReadBatteryCR()
