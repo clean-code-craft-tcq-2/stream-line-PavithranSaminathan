@@ -7,14 +7,13 @@
 #include<stdbool.h>
 
 /*******MACROS***********/
-
+#define TRUE        1
+#define FALSE       0
 /***** DEFINES***********/
 
 /******VARIABLES***********/
 
 char *FormatedOPData;
-
-FormatedOPData = malloc(sizeof(char));
 
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
@@ -24,8 +23,7 @@ void printOnConsole(char *Data)
 
 char* formatOutputData(float chargeRate,float SOC,float Temp)
 {
- FormatedOPData = '\0';
- strcat(FormatedOPData,chargeRate);
+ strcat(FormatedOPData,(char*)chargeRate);
  return FormatedOPData;
 }
 
@@ -51,5 +49,5 @@ bool SendBatteryStatus()
   float Temp = ReadBatteryTemp();
   FormatedOPData = formatOutputData(chargeRate,SOC,Temp);
   printOnConsole(FormatedOPData);
-  return True;
+  return TRUE;
 }
