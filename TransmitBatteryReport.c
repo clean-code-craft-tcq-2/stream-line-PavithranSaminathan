@@ -22,11 +22,12 @@ void printOnConsole(char *Data)
   printf("%s",Data);
 }
 
+/*
 char* formatOutputData(float chargeRate,float SOC,float Temp)
 {
-  
-  return FormatedOPData;
+   return FormatedOPData;
 }
+*/
 
 float ReadBatteryCR()
 {
