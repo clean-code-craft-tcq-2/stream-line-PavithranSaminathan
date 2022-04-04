@@ -12,6 +12,6 @@ TEST_CASE("Check Battery status sending count")
   //int chargeRate = ReadBatteryCR();
   //int SOC =  ReadBatterySOC();
   //int Temp = ReadBatteryTemp();
-  REQUIRE(SendBatteryStatus() == FALSE);
+  REQUIRE(SendBatteryStatus() == TRUE);
 }
 
