@@ -14,7 +14,7 @@
 
 /******VARIABLES***********/
 
-char *FormatedOPData;
+//char *FormatedOPData;
 
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
@@ -45,6 +45,7 @@ static float ReadBatteryTemp()
 
 bool SendBatteryStatus()
 {
+  char FormatedOPData[100];
   float chargeRate = ReadBatteryCR();
   float SOC =  ReadBatterySOC();
   float Temp = ReadBatteryTemp();
