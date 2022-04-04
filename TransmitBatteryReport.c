@@ -48,7 +48,7 @@ bool SendBatteryStatus()
   float chargeRate = ReadBatteryCR();
   float SOC =  ReadBatterySOC();
   float Temp = ReadBatteryTemp();
-  FormatedOPData = formatOutputData(chargeRate,SOC,Temp);
+  formatOutputData(chargeRate,SOC,Temp);
   printOnConsole(FormatedOPData);
   return TRUE;
 }
