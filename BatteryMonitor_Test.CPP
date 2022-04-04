@@ -3,7 +3,7 @@
 #include "test/catch.hpp"
 #include "TransmitBatteryReport.h"
 
-/*
+
 TEST_F("Check Battery status sending count")
 { 
   //int chargeRate = ReadBatteryCR();
@@ -11,4 +11,4 @@ TEST_F("Check Battery status sending count")
   //int Temp = ReadBatteryTemp();
   SendBatteryStatus();
 }
-*/
+
