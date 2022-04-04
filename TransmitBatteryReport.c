@@ -55,4 +55,5 @@ bool SendBatteryStatus()
 
 int main()
 {
+  return 0;
 }
