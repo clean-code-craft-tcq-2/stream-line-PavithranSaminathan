@@ -51,3 +51,9 @@ bool SendBatteryStatus()
   printOnConsole(FormatedOPData);
   return TRUE;
 }
+
+int main(void) 
+{
+	printf("Hello world!");
+	return 0;
+}
