@@ -1,6 +1,6 @@
 #ifndef TransmitBatteryReport_h
 #define TransmitBatteryReport_h
 
-bool SendBatteryStatus();
+int PrintBatteryStatus(int NoofReadings);
 
 #endif
