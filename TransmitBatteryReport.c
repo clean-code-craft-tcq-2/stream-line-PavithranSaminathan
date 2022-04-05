@@ -27,12 +27,12 @@ float ReadBatteryCR(int location,int BatteryNo)
   return BAT_CR_Value[BatteryNo][location];
 }
 
-float ReadBatterySOC(int location,int BatteryNo)
+int ReadBatterySOC(int location,int BatteryNo)
 {
   return BAT_SOC_Value[BatteryNo][location];
 }
 
-static float ReadBatteryTemp(int location,int BatteryNo)
+int ReadBatteryTemp(int location,int BatteryNo)
 {
   return BAT_Temp_Value[BATTERYNO][location];
 }
@@ -40,9 +40,9 @@ static float ReadBatteryTemp(int location,int BatteryNo)
 void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
 {
   float chargeRate = ReadBatteryCR(Location,BatteryPos);
-  float SOC =  ReadBatterySOC(Location,BatteryPos);
-  float Temp = ReadBatteryTemp(Location,BatteryPos);
-  sprintf(FormatOPData,"B%dCR:%2f,,B%dSOC:%2f,B%dTemp:%2f",BatteryPos,chargeRate,BatteryPos,SOC,BatteryPos,Temp);  
+  int SOC =  ReadBatterySOC(Location,BatteryPos);
+  int Temp = ReadBatteryTemp(Location,BatteryPos);
+  sprintf(FormatOPData,"B%dCR:%2f,,B%dSOC:%d,B%dTemp:%d",BatteryPos,chargeRate,BatteryPos,SOC,BatteryPos,Temp);  
 }
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
