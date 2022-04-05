@@ -9,6 +9,6 @@
 
 TEST_CASE("Check Battery status sending count")
 { 
-PrintBatteryStatus(50);
+PrintBatteryStatus(50,2);
 }
 
