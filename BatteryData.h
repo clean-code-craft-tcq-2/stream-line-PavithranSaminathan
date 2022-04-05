@@ -1,5 +1,5 @@
-#ifndef BaterryCR_Cfg_h
-#define BaterryCR_Cfg_h
+#ifndef BatteryData_h
+#define BatteryData_h
 
 #include <float.h>
 
