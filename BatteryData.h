@@ -23,7 +23,7 @@ float BAT_CR_Value[BATTERYNO][50]={
 };
 
 
-float BAT_SOC_Value[BATTERYNO][50]={
+int BAT_SOC_Value[BATTERYNO][50]={
                                      { 45, 62, 39, 46, 54, 27, 75, 51, 67, 29, 
                                        76, 80, 59, 69, 26, 32, 70, 40, 21, 58, 
                                        49, 43, 74, 24, 31, 72, 64, 68, 41, 78, 
@@ -39,7 +39,7 @@ float BAT_SOC_Value[BATTERYNO][50]={
                                        }
                                       };
 
-float BAT_Temp_Value[BATTERYNO][50]={ {15, 23, 39, 18, 11, 43, 45, 9, 13, 34,
+int BAT_Temp_Value[BATTERYNO][50]={ {15, 23, 39, 18, 11, 43, 45, 9, 13, 34,
                                        40, 14, 13, 37, 25, 17, 44, 23, 8, 35,
                                        6, 27, 6, 41, 26, 39, 36, 18, 44, 18,
                                        19, 21, 29, 6, 20, 45, 17, 11, 24, 41,
