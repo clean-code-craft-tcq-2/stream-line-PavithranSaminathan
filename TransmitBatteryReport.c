@@ -19,7 +19,7 @@
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
 {
-  printf("%s",Data);
+  printf("\n%s",Data);
 }
 
 float ReadBatteryCR(int location,int BatteryNo)
@@ -29,12 +29,12 @@ float ReadBatteryCR(int location,int BatteryNo)
 
 float ReadBatterySOC(int location,int BatteryNo)
 {
-  return 1;
+  return BAT_SOC_Value[BatteryNo][location];
 }
 
 static float ReadBatteryTemp(int location,int BatteryNo)
 {
-  return 4.0;
+  return BAT_Temp_Value[BATTERYNO][location];
 }
 
 void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
