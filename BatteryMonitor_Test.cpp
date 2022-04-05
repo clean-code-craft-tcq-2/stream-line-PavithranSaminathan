@@ -9,7 +9,6 @@
 
 TEST_CASE("Check Battery status sending count")
 { 
-SendBatteryStatus();
-//  REQUIRE(SendBatteryStatus() == TRUE);
+PrintBatteryStatus(50);
 }
 
