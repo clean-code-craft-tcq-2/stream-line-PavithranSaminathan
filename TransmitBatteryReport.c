@@ -36,14 +36,13 @@ static float ReadBatteryTemp(int location,int BatteryNo)
 {
   return 4.0;
 }
-char* ReadBatteryStatus(int Location,int BatteryPos)
+void ReadBatteryStatus(int Location,int BatteryPos,char* FormatedData)
 {
   char FormatedOPData[100];
   float chargeRate = ReadBatteryCR(Location,BatteryPos);
   float SOC =  ReadBatterySOC(Location,BatteryPos);
   float Temp = ReadBatteryTemp(Location,BatteryPos);
-  sprintf(FormatedOPData,"CR:%f,,SOC:%f,Temp:%f",chargeRate,SOC,Temp);
-  return FormatedOPData;
+  sprintf(FormatedOPData,"CR:%f,,SOC:%f,Temp:%f",chargeRate,SOC,Temp);  
 }
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
@@ -54,8 +53,8 @@ int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
   {
     while(TotalNoOfBattery > batterycount)
     {
-      FormatedData=ReadBatteryStatus(index,batterycount);
-      printOnConsole(FormatedOPData);
+      ReadBatteryStatus(index,batterycount,FormatedData);
+      printOnConsole(FormatedData);
       batterycount++;
     }
     batterycount=0;
