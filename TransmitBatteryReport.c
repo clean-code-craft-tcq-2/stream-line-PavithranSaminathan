@@ -42,7 +42,7 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
   float chargeRate = ReadBatteryCR(Location,BatteryPos);
   float SOC =  ReadBatterySOC(Location,BatteryPos);
   float Temp = ReadBatteryTemp(Location,BatteryPos);
-  sprintf(FormatOPData,"CR:%f,,SOC:%f,Temp:%f",chargeRate,SOC,Temp);  
+  sprintf(FormatOPData,"B%dCR:%2f,,B%dSOC:%2f,B%dTemp:%2f",BatteryPos,chargeRate,BatteryPos,SOC,BatteryPos,Temp);  
 }
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
