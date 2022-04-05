@@ -47,9 +47,9 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatedData)
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
-  int FormatedData[100];
+  char FormatedData[100];
   int batterycount;
-  for(int index; NoofReadings > index;index)
+  for(int index; NoofReadings > index;index++)
   {
     while(TotalNoOfBattery > batterycount)
     {
