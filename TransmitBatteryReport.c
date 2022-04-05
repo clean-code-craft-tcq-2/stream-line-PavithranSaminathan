@@ -15,20 +15,12 @@
 
 /******VARIABLES***********/
 
-//char *FormatedOPData;
 
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
 {
   printf("%s",Data);
 }
-
-/*
-char* formatOutputData(float chargeRate,float SOC,float Temp)
-{
-   return FormatedOPData;
-}
-*/
 
 float ReadBatteryCR(int location,int BatteryNo)
 {
@@ -44,24 +36,30 @@ static float ReadBatteryTemp(int location,int BatteryNo)
 {
   return 4.0;
 }
-char* ReadBatteryStatus(int Location)
+char* ReadBatteryStatus(int Location,int BatteryPos)
 {
   char FormatedOPData[100];
-  float chargeRate = ReadBatteryCR(Location);
-  float SOC =  ReadBatterySOC(Location);
-  float Temp = ReadBatteryTemp(Location);
+  float chargeRate = ReadBatteryCR(Location,BatteryPos);
+  float SOC =  ReadBatterySOC(Location,BatteryPos);
+  float Temp = ReadBatteryTemp(Location,BatteryPos);
   sprintf(FormatedOPData,"CR:%f,,SOC:%f,Temp:%f",chargeRate,SOC,Temp);
   return FormatedOPData;
 }
 
-int PrintBatteryStatus(int NoofReadings)
+int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
   int FormatedData[100];
+  int batterycount;
   for(int index; NoofReadings > index;index)
   {
-    FormatedData=ReadBatteryStatus(index);
-    printOnConsole(FormatedOPData);
-  }  
+    while(TotalNoOfBattery > batterycount)
+    {
+      FormatedData=ReadBatteryStatus(index,batterycount);
+      printOnConsole(FormatedOPData);
+      batterycount++;
+    }
+    batterycount=0;
+  }
   return index;
 }
 
