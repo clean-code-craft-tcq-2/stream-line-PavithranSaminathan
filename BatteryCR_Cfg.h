@@ -22,6 +22,6 @@ float BAT_CR_Value[BATTERYNO][50]={
                                    }
 };
 
-int Bat1_CR_Value[50]=;
+
 
 #endif
