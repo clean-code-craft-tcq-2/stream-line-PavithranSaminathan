@@ -5,7 +5,7 @@
 #include<string.h>
 #include<stdbool.h>
 #include "TransmitBatteryReport.h"
-#include "BatteryCR_Cfg.h"
+#include "BatteryData.h"
 
 
 /*******MACROS***********/
