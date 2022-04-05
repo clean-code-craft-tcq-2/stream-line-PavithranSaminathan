@@ -5,6 +5,7 @@
 #include<string.h>
 #include<stdbool.h>
 #include "TransmitBatteryReport.h"
+#include "BatteryCR_Cfg.h"
 
 
 /*******MACROS***********/
@@ -29,29 +30,38 @@ char* formatOutputData(float chargeRate,float SOC,float Temp)
 }
 */
 
-float ReadBatteryCR()
+float ReadBatteryCR(int location,int BatteryNo)
 {
-  return 5.0;
+  return BAT_CR_Value[BatteryNo][location];
 }
 
-float ReadBatterySOC()
+float ReadBatterySOC(int location,int BatteryNo)
 {
   return 1;
 }
 
-static float ReadBatteryTemp()
+static float ReadBatteryTemp(int location,int BatteryNo)
 {
   return 4.0;
 }
-
-bool SendBatteryStatus()
+char* ReadBatteryStatus(int Location)
 {
   char FormatedOPData[100];
-  float chargeRate = ReadBatteryCR();
-  float SOC =  ReadBatterySOC();
-  float Temp = ReadBatteryTemp();
+  float chargeRate = ReadBatteryCR(Location);
+  float SOC =  ReadBatterySOC(Location);
+  float Temp = ReadBatteryTemp(Location);
   sprintf(FormatedOPData,"CR:%f,,SOC:%f,Temp:%f",chargeRate,SOC,Temp);
-  printOnConsole(FormatedOPData);
-  return TRUE;
+  return FormatedOPData;
+}
+
+int PrintBatteryStatus(int NoofReadings)
+{
+  int FormatedData[100];
+  for(int index; NoofReadings > index;index)
+  {
+    FormatedData=ReadBatteryStatus(index);
+    printOnConsole(FormatedOPData);
+  }  
+  return index;
 }
 
