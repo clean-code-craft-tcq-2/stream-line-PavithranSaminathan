@@ -80,6 +80,5 @@ Setup the quality parameters of your project (duplication, complexity, coverage,
 
 Test Case 1:
     Check Battery status sending count
-    
-    ![plot](C:\GIT\TCQ\BatteryStatus.png)
-
+   
+ 
