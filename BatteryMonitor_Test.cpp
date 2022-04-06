@@ -15,8 +15,8 @@ PrintBatteryStatus(50,2);
 TEST_CASE("Verify formatted output data for individual battery")
 {
   int Location=5;
-  int BatteryPos=1;
+  int BatterySNo=1;
   char FormatOPData[100];
-  ReadBatteryStatus( Location, BatteryPos, FormatOPData);
-  REQUIRE(strcmp(FormatOPData,"B1CR:0.60,B1SOC:77,B1Temp:2") == 0);
+  ReadBatteryStatus( Location, BatterySNo, FormatOPData);
+  REQUIRE(strcmp(FormatOPData,"B:1,CR:0.60,SOC:77,Temp:2") == 0);
 }
