@@ -7,12 +7,35 @@
 #define FALSE       0
 
 
-TEST_CASE("Check TransmitBatteryStatus function")
+TEST_CASE("Check TransmitBatteryStatus function positive result with both positive arguments")
 { 
-  REQUIRE(TransmitBatteryStatus(50,2) == 50);
+  int TotalCounts =50;
+  int TotalBatteries = 2;
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
 }
 
-TEST_CASE("Verify formatted CSV output data for individual battery ")
+TEST_CASE("Check TransmitBatteryStatus function negative result with invalid arguments")
+{  
+  int TotalCounts =0;
+  int TotalBatteries = 0;
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+}
+
+TEST_CASE("Check TransmitBatteryStatus function negative result with first invalid arguments")
+{ 
+  int TotalCounts =0;
+  int TotalBatteries = 2;
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+}
+
+TEST_CASE("Check TransmitBatteryStatus function negative result with second invalid argument")
+{ 
+  int TotalCounts =50;
+  int TotalBatteries = 0;
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+}
+
+TEST_CASE("Verify formatted CSV output data for battery 1 result")
 {
   int Location=5;
   int BatterySNo=1;
