@@ -14,7 +14,7 @@ PrintBatteryStatus(50,2);
 
 TEST_CASE("Verify formatted output data for individual battery")
 {
-  int Location=6;
+  int Location=5;
   int BatteryPos=1;
   char FormatOPData[100];
   ReadBatteryStatus( Location, BatteryPos, FormatOPData);
