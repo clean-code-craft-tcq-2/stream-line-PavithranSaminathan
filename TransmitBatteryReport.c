@@ -59,6 +59,6 @@ int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
     }
     batterycount=0;
   }
-  return (index+1);
+  return (index);
 }
 
