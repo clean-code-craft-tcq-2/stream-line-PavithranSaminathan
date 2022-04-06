@@ -12,7 +12,7 @@ TEST_CASE("Check Battery status sending count")
 PrintBatteryStatus(50,2);
 }
 
-TEST_F("Verify formatted output data for individual battery")
+TEST_CASE("Verify formatted output data for individual battery")
 {
   int Location=6;
   int BatteryPos=1;
