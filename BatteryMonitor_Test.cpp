@@ -12,7 +12,7 @@ TEST_CASE("Check TransmitBatteryStatus function")
   REQUIRE(TransmitBatteryStatus(50,2) == 50);
 }
 
-TEST_CASE("Verify formatted output data for individual battery")
+TEST_CASE("Verify formatted CSV output data for individual battery ")
 {
   int Location=5;
   int BatterySNo=1;
