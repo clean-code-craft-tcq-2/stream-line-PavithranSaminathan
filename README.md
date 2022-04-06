@@ -75,3 +75,11 @@ This section lists the minimum functionality of the Sender and Receiver.
 ## Quality Parameters
 
 Setup the quality parameters of your project (duplication, complexity, coverage, warnings) using GitHub workflow yml files.
+
+## Test Execution
+
+Test Case 1:
+    Check Battery status sending count
+    
+    ![plot](C:\GIT\TCQ\BatteryStatus.png)
+
