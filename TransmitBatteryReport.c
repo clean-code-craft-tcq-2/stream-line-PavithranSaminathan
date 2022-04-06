@@ -54,12 +54,10 @@ int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
     while(TotalNoOfBattery > batterycount)
     {
       printf("\ndata %d", index);
-      ReadBatteryStatus(index,batterycount,FormatedData);
+      ReadBatteryStatus(index,0,FormatedData);
       printOnConsole(FormatedData);
-      batterycount++;
-    }
     batterycount=0;
   }
-  return 50;
+  return (index+1);
 }
 
