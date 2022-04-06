@@ -34,7 +34,7 @@ int ReadBatterySOC(int location,int BatteryNo)
 
 int ReadBatteryTemp(int location,int BatteryNo)
 {
-  return BAT_Temp_Value[BATTERYNO][location];
+  return BAT_Temp_Value[BatteryNo][location];
 }
 
 void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
