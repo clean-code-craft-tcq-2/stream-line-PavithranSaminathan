@@ -81,4 +81,10 @@ Setup the quality parameters of your project (duplication, complexity, coverage,
 Test Case 1:
     Check Battery status sending count
    
- 
+ ```mermaid
+sequenceDiagram
+    BatteryMonitorTest->>+TransmitBatteryReport: PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
+    TransmitBatteryReport->>+TransmitBatteryReport: ReadBatteryStatus()
+    TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
+    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of PrintBatteryStatus function
+```
