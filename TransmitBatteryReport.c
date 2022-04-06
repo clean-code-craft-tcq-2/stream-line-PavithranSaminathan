@@ -3,7 +3,6 @@
 #include<stdlib.h>
 #include<float.h>
 #include<string.h>
-#include<stdbool.h>
 #include "TransmitBatteryReport.h"
 #include "BatteryData.h"
 
