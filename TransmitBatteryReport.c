@@ -53,6 +53,7 @@ int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
   {
     while(TotalNoOfBattery > batterycount)
     {
+      print("\ndata %d", index);
       ReadBatteryStatus(index,batterycount,FormatedData);
       printOnConsole(FormatedData);
       batterycount++;
