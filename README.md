@@ -103,7 +103,7 @@ sequenceDiagram
     TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
     BatteryMonitorTest-->>+BatteryMonitorTest:Assert of TransmitBatteryStatus function
 ```
-Test Case 2:
+Test Case 5:
     Verify formatted CSV output data for individual battery
     
     Sample Output data is : "B:1,CR:0.60,SOC:77,Temp:2"
