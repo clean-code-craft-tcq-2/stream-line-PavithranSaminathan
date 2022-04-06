@@ -79,15 +79,19 @@ Setup the quality parameters of your project (duplication, complexity, coverage,
 ## Test Execution explanation with sequence diagram
 
 Test Case 1: Check TransmitBatteryStatus function positive result with both positive arguments
+
     -Both arguments pass as positive to make result true.
     
 Test Case 2: Check TransmitBatteryStatus function negative result with invalid arguments
+
     -Both argument send as invalid data to make result false.  
 
 Test Case 3: Check TransmitBatteryStatus function negative result with first invalid arguments
-    -Send argument send as invalid TotalCounts data to make result false.
+      
+     -Send argument send as invalid TotalCounts data to make result false.
 
 Test Case 4: Check TransmitBatteryStatus function negative result with second invalid argument
+    
     -Send argument send as invalid TotalBatteries data to make result false.
   
   Below sequence diagram mentioned for above 4 test cases
