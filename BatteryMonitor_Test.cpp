@@ -18,21 +18,21 @@ TEST_CASE("Check TransmitBatteryStatus function negative result with invalid arg
 {  
   int TotalCounts =0;
   int TotalBatteries = 0;
-  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == FALSE);
 }
 
 TEST_CASE("Check TransmitBatteryStatus function negative result with first invalid arguments")
 { 
   int TotalCounts =0;
   int TotalBatteries = 2;
-  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == FALSE);
 }
 
 TEST_CASE("Check TransmitBatteryStatus function negative result with second invalid argument")
 { 
   int TotalCounts =50;
   int TotalBatteries = 0;
-  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == TRUE);
+  REQUIRE(TransmitBatteryStatus(TotalCounts,TotalBatteries) == FALSE);
 }
 
 TEST_CASE("Verify formatted CSV output data for battery 1 result")
