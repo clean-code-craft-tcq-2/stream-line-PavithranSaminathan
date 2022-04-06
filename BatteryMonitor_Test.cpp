@@ -9,7 +9,7 @@
 
 TEST_CASE("Check Battery status sending count")
 { 
-PrintBatteryStatus(50,2);
+  REQUIRE(PrintBatteryStatus(50,2) == 50);
 }
 
 TEST_CASE("Verify formatted output data for individual battery")
