@@ -47,14 +47,15 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
+  (void)TotalNoOfBattery;
   char FormatedData[100];
   int batterycount;
-  for(int index=0; NoofReadings > index;index++)
+  int index=0;
+  for(; NoofReadings > index; index++)
   {
-   
-      printf("\ndata %d", index);
-      ReadBatteryStatus(index,0,FormatedData);
-      printOnConsole(FormatedData);
+    printf("\ndata %d", index);
+    ReadBatteryStatus(index,0,FormatedData);
+    printOnConsole(FormatedData);
     batterycount=0;
   }
   return (index+1);
