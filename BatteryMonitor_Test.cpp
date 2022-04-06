@@ -7,9 +7,9 @@
 #define FALSE       0
 
 
-TEST_CASE("Check Battery status sending count")
+TEST_CASE("Check TransmitBatteryStatus function")
 { 
-  REQUIRE(PrintBatteryStatus(50,2) == 50);
+  REQUIRE(TransmitBatteryStatus(50,2) == 50);
 }
 
 TEST_CASE("Verify formatted output data for individual battery")
