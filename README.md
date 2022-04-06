@@ -86,5 +86,22 @@ sequenceDiagram
     BatteryMonitorTest->>+TransmitBatteryReport: TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
     TransmitBatteryReport->>+TransmitBatteryReport: ReadBatteryStatus()
     TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
-    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of TransmitBatteryStatus function
+    TransmitBatteryReport-->>-TransmitBatteryReport:Assert of TransmitBatteryStatus function
+```
+Test Case 2:
+    Verify formatted CSV output data for individual battery
+    
+    Sample Output data is : "B:1,CR:0.60,SOC:77,Temp:2"
+    
+       - BatteryNo =1
+       - Charge rate = 0.6
+       - SOC = 77
+       - Temp =2 
+       
+       
+    
+ ```mermaid
+sequenceDiagram
+    BatteryMonitorTest->>+TransmitBatteryReport: ReadBatteryStatus(int , int , char*):int
+    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of formattted output value
 ```
