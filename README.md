@@ -86,7 +86,7 @@ sequenceDiagram
     BatteryMonitorTest->>+TransmitBatteryReport: TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
     TransmitBatteryReport->>+TransmitBatteryReport: ReadBatteryStatus()
     TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
-    TransmitBatteryReport-->>-TransmitBatteryReport:Assert of TransmitBatteryStatus function
+    BatteryMonitorTest-->>+BatteryMonitorTest:Assert of TransmitBatteryStatus function
 ```
 Test Case 2:
     Verify formatted CSV output data for individual battery
