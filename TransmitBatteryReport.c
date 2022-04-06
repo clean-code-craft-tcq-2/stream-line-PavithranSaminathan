@@ -44,21 +44,28 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
   sprintf(FormatOPData,"B:%d,CR:%.2f,SOC:%d,Temp:%d",BatteryPos,chargeRate,SOC,Temp);  
 }
 
-int TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery)
+bool TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
   char FormatedData[100];
   int batterycount=0;
   int index=0;
-  for(; NoofReadings > index; index++)
-  {
-    while(TotalNoOfBattery > batterycount)
-    {
-      ReadBatteryStatus(index,batterycount,FormatedData);
-      printOnConsole(FormatedData);
-      batterycount++;
+   if(NoofReadings && TotalNoOfBattery)
+   {
+     for(; NoofReadings > index; index++)
+      {
+        while(TotalNoOfBattery > batterycount)
+        {
+          ReadBatteryStatus(index,batterycount,FormatedData);
+          printOnConsole(FormatedData);
+          batterycount++;
+        }
+        batterycount=0;
+       }
+      return (TRUE);
     }
-    batterycount=0;
-  }
-  return (index);
+    else
+    {
+      return FALSE;
+    }
 }
 
