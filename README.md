@@ -83,8 +83,8 @@ Test Case 1:
    
  ```mermaid
 sequenceDiagram
-    BatteryMonitorTest->>+TransmitBatteryReport: PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
+    BatteryMonitorTest->>+TransmitBatteryReport: TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
     TransmitBatteryReport->>+TransmitBatteryReport: ReadBatteryStatus()
     TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
-    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of PrintBatteryStatus function
+    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of TransmitBatteryStatus function
 ```
