@@ -44,7 +44,7 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
   sprintf(FormatOPData,"B:%d,CR:%.2f,SOC:%d,Temp:%d",BatteryPos,chargeRate,SOC,Temp);  
 }
 
-int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
+int TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
   char FormatedData[100];
   int batterycount=0;
