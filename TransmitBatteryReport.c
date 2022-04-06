@@ -49,13 +49,18 @@ int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
   (void)TotalNoOfBattery;
   char FormatedData[100];
-  int batterycount;
+  int batterycount=0;
   int index=0;
   for(; NoofReadings > index; index++)
   {
     printf("\ndata %d", index);
-    ReadBatteryStatus(index,0,FormatedData);
-    printOnConsole(FormatedData);
+    while(TotalNoOfBattery > batterycount)
+    {
+       printf("  %d", index);
+      ReadBatteryStatus(index,0,FormatedData);
+      printOnConsole(FormatedData);
+      batterycount++;
+    }
     batterycount=0;
   }
   return (index+1);
