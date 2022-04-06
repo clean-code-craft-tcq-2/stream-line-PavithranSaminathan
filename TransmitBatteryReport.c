@@ -15,7 +15,6 @@
 
 /******VARIABLES***********/
 
-
 /***********FUNCTIONS*******/
 void printOnConsole(char *Data)
 {
@@ -47,16 +46,13 @@ void ReadBatteryStatus(int Location,int BatteryPos,char* FormatOPData)
 
 int PrintBatteryStatus(int NoofReadings, int TotalNoOfBattery)
 {
-  (void)TotalNoOfBattery;
   char FormatedData[100];
   int batterycount=0;
   int index=0;
   for(; NoofReadings > index; index++)
   {
-
     while(TotalNoOfBattery > batterycount)
     {
-      printf("  %d", index);
       ReadBatteryStatus(index,batterycount,FormatedData);
       printOnConsole(FormatedData);
       batterycount++;
