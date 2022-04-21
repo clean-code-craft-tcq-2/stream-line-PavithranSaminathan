@@ -93,7 +93,7 @@ void ReadBatteryParametersfromConsole(struct Battery *BatteryParameters, size_t 
 void formatAndPrintStatisticsToConsole(struct Battery *BatteryParameters) {
     size_t loopCounter;
     for(loopCounter=0; loopCounter<2; loopCounter++) {
-        printf("\n********** Battery %d Parameters **********",loopCounter);
+        printf("\n********** Battery %lu Parameters **********",loopCounter);
         printf("\nCharge Rate Statistics:\n");
         printf("Minimum: %.2f\n",BatteryParameters->Battery[loopCounter].outputMinimumChargeRate);
         printf("Maximum: %.2f\n",BatteryParameters->Battery[loopCounter].outputMaximumChargeRate);
@@ -111,7 +111,7 @@ void formatAndPrintStatisticsToConsole(struct Battery *BatteryParameters) {
 
 void ReceiverSideImplementation(struct Battery *BatteryParameters) {
     AllocateMemoryToSaveInput(BatteryParameters);
-    ReadBatteryParametersfromConsole(BatteryParameters,NUMBER_OF_ELEMENTS);
+    ReadBatteryParametersfromConsole(BatteryParameters,(size_t)NUMBER_OF_ELEMENTS);
     computeStatitics(BatteryParameters, NUMBER_OF_ELEMENTS, NUMBER_OF_BATTERY, NUMBER_OF_SAMPLES_FOR_AVERAGE);
     formatAndPrintStatisticsToConsole(BatteryParameters);
     freeAllocatedMemory(BatteryParameters);
