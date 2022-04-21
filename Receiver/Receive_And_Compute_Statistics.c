@@ -74,7 +74,8 @@ void freeAllocatedMemory(struct Battery *BatteryParameters) {
 }
 
 void ReadBatteryParametersfromConsole(struct Battery *BatteryParameters, size_t numberOfSamples) {
-    size_t innerLoopCount,outerLoopCount,BatteryNumber;
+    size_t innerLoopCount,outerLoopCount;
+    int BatteryNumber;
     char stringToSaveHeadings[20];
 
     scanf("%s",stringToSaveHeadings);
