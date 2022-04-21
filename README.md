@@ -75,3 +75,48 @@ This section lists the minimum functionality of the Sender and Receiver.
 ## Quality Parameters
 
 Setup the quality parameters of your project (duplication, complexity, coverage, warnings) using GitHub workflow yml files.
+
+## Test Execution explanation with sequence diagram
+
+Test Case 1: Check TransmitBatteryStatus function positive result with both positive arguments
+
+    Both arguments pass as positive to make result true.
+    
+Test Case 2: Check TransmitBatteryStatus function negative result with invalid arguments
+
+    Both argument send as invalid data to make result false.  
+
+Test Case 3: Check TransmitBatteryStatus function negative result with first invalid arguments
+      
+     Send argument send as invalid TotalCounts data to make result false.
+
+Test Case 4: Check TransmitBatteryStatus function negative result with second invalid argument
+    
+    Send argument send as invalid TotalBatteries data to make result false.
+  
+  Below sequence diagram mentioned for above 4 test cases
+ 
+ ```mermaid
+sequenceDiagram
+    BatteryMonitorTest->>+TransmitBatteryReport: TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery):int
+    TransmitBatteryReport->>+TransmitBatteryReport: ReadBatteryStatus()
+    TransmitBatteryReport->>+TransmitBatteryReport: printOnConsole(char * Data)
+    BatteryMonitorTest-->>+BatteryMonitorTest:Assert of TransmitBatteryStatus function
+```
+Test Case 5:
+    Verify formatted CSV output data for individual battery
+    
+    Sample Output data is : "B:1,CR:0.60,SOC:77,Temp:2"
+    
+       - BatteryNo =1
+       - Charge rate = 0.6
+       - SOC = 77
+       - Temp =2 
+       
+       
+    
+ ```mermaid
+sequenceDiagram
+    BatteryMonitorTest->>+TransmitBatteryReport: ReadBatteryStatus(int , int , char*):int
+    TransmitBatteryReport-->>-BatteryMonitorTest:Assert of formattted output value
+```
