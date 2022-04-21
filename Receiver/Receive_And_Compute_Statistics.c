@@ -74,13 +74,13 @@ void freeAllocatedMemory(struct Battery *BatteryParameters) {
 }
 
 void ReadBatteryParametersfromConsole(struct Battery *BatteryParameters, size_t numberOfSamples) {
-    int innerLoopCount,outerLoopCount,BatteryNumber;
+    size_t innerLoopCount,outerLoopCount,BatteryNumber;
     char stringToSaveHeadings[20];
 
     scanf("%s",stringToSaveHeadings);
     for(outerLoopCount=0; outerLoopCount<numberOfSamples; outerLoopCount++)
     {
-        for(innerLoopCount=0; innerLoopCount<2; innerLoopCount++)
+        for(innerLoopCount=0; innerLoopCount<NUMBER_OF_BATTERY; innerLoopCount++)
         {
             scanf("%d,",&BatteryNumber);
             scanf("%f,",&BatteryParameters->Battery[BatteryNumber].ChargeRate[outerLoopCount]);
@@ -92,7 +92,7 @@ void ReadBatteryParametersfromConsole(struct Battery *BatteryParameters, size_t 
 
 void formatAndPrintStatisticsToConsole(struct Battery *BatteryParameters) {
     size_t loopCounter;
-    for(loopCounter=0; loopCounter<2; loopCounter++) {
+    for(loopCounter=0; loopCounter<NUMBER_OF_BATTERY; loopCounter++) {
         printf("\n********** Battery %lu Parameters **********",loopCounter);
         printf("\nCharge Rate Statistics:\n");
         printf("Minimum: %.2f\n",BatteryParameters->Battery[loopCounter].outputMinimumChargeRate);
