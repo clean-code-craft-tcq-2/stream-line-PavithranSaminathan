@@ -51,7 +51,7 @@ bool TransmitBatteryStatus(int NoofReadings, int TotalNoOfBattery)
   int index=0;
    if(NoofReadings && TotalNoOfBattery)
    {
-     sprintf(FormatOPData,"B_N0,CR,SOC,Temp");
+     sprintf(FormatedData,"B_N0,CR,SOC,Temp");
      printOnConsole(FormatedData);
      for(; NoofReadings > index; index++)
       {
