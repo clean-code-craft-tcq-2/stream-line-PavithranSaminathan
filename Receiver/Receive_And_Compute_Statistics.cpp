@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "Receive_And_Compute_Statistics.h"
-#include "test/catch.hpp"
+#include "../test/catch.hpp"
 
 TEST_CASE("Tests to verify the calculate statistics") {
 	struct Battery BatteryParameters;
