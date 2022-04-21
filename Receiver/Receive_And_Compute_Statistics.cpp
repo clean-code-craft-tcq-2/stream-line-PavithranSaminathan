@@ -2,8 +2,7 @@
 #include "Receive_And_Compute_Statistics.h"
 #include "../test/catch.hpp"
 
-TEST_CASE("Tests to verify the calculate statistics") 
-{
+TEST_CASE("Tests to verify the calculate statistics") {
 	struct Battery BatteryParameters;
 	ReceiverSideImplementation(&BatteryParameters);
 	
@@ -13,14 +12,14 @@ TEST_CASE("Tests to verify the calculate statistics")
 		
 	for(int i=0; i<NUMBER_OF_BATTERY; i++)
 	{
-		REQUIRE(BatteryParameters.Battery[i].outputMinimumChargeRate = ExpectedChargeRate[i][0];
-    		REQUIRE(BatteryParameters.Battery[i].outputMaximumChargeRate = ExpectedChargeRate[i][1];
-		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageChargeRate = ExpectedChargeRate[i][2];
-    		REQUIRE(BatteryParameters.Battery[i].outputMinimumTemperature = ExpectedTemperature[i][0];
-    		REQUIRE(BatteryParameters.Battery[i].outputMaximumTemperature = ExpectedTemperature[i][1];
-		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageTemperature = ExpectedTemperature[i][2];
-    		REQUIRE(BatteryParametersBattery[i].outputMinimumSOC = ExpectedSOC[i][0];
-    		REQUIRE(BatteryParameters->Battery[i].outputMaximumSOC = ExpectedSOC[i][1];
-		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageSOC = ExpectedSOC[i][0];
+		REQUIRE(BatteryParameters.Battery[i].outputMinimumChargeRate == ExpectedChargeRate[i][0]);
+		REQUIRE(BatteryParameters.Battery[i].outputMaximumChargeRate == ExpectedChargeRate[i][1]);
+		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageChargeRate == ExpectedChargeRate[i][2]);
+    		REQUIRE(BatteryParameters.Battery[i].outputMinimumTemperature == ExpectedTemperature[i][0]);
+    		REQUIRE(BatteryParameters.Battery[i].outputMaximumTemperature == ExpectedTemperature[i][1]);
+		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageTemperature == ExpectedTemperature[i][2]);
+    		REQUIRE(BatteryParametersBattery[i].outputMinimumSOC == ExpectedSOC[i][0]);
+    		REQUIRE(BatteryParameters->Battery[i].outputMaximumSOC == ExpectedSOC[i][1]);
+		REQUIRE(BatteryParameters->Battery[i].outputMovingAverageSOC == ExpectedSOC[i][0]);
 	}	
 }
