@@ -41,5 +41,5 @@ TEST_CASE("Verify formatted CSV output data for battery 1 result")
   int BatterySNo=1;
   char FormatOPData[100];
   ReadBatteryStatus( Location, BatterySNo, FormatOPData);
-  REQUIRE(strcmp(FormatOPData,"B:1,CR:0.60,SOC:77,Temp:2") == 0);
+  REQUIRE(strcmp(FormatOPData,"1,0.60,77,2") == 0);
 }
